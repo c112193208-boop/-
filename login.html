@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>心跡 SoulJourney - 登入</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&display=swap');
+        body { 
+            font-family: 'Noto Sans TC', sans-serif; 
+            background-color: #fdfaf7; /* 溫馨偏米白色調 */
+        }
+        .login-card {
+            animation: slideUp 0.6s ease-out;
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-6">
+
+    <div class="login-card bg-white p-10 rounded-[2.5rem] shadow-xl shadow-orange-100/50 w-full max-w-sm text-center border border-orange-50 relative overflow-hidden">
+        
+        <div class="absolute -top-10 -right-10 w-32 h-32 bg-orange-50 rounded-full opacity-50"></div>
+        <div class="absolute -bottom-10 -left-10 w-24 h-24 bg-orange-50 rounded-full opacity-50"></div>
+
+        <div class="relative z-10">
+            <div class="mb-8">
+                <div class="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 text-orange-400 shadow-inner">
+                    <i class="fas fa-heart text-3xl"></i>
+                </div>
+                <h1 class="text-3xl font-bold text-slate-800 tracking-tight">心跡</h1>
+                <p class="text-slate-400 mt-2 text-sm tracking-widest uppercase font-light">SoulJourney</p>
+                <div class="h-1 w-12 bg-orange-200 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="mb-10">
+                <h2 class="text-slate-600 font-medium">歡迎回來</h2>
+                <p class="text-slate-400 text-xs mt-1">開始記錄你每一刻的情感流動 </p>
+            </div>
+
+            <button onclick="handleLogin()" class="group w-full flex items-center justify-center gap-3 bg-white border border-slate-200 py-4 rounded-2xl hover:bg-slate-50 hover:border-orange-200 transition-all duration-300 shadow-sm active:scale-95">
+                <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" class="w-5" alt="Google Logo">
+                <span class="font-medium text-slate-600 group-hover:text-orange-500 transition-colors">使用 Google 帳號登入</span>
+            </button>
+
+            <div class="mt-12 text-[10px] text-slate-300">
+                <p>© 2026 心跡專題開發小組</p>
+                <p class="mt-1 italic">「行程走到哪，情感就在哪 」</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleLogin() {
+            // 這裡模擬 Google 登入跳轉邏輯
+            // 在實際專案中，這裡會接 Firebase Auth 或 Google Cloud API
+            console.log("正在引導至 Google 登入...");
+            
+            // 模擬登入成功的延遲感
+            const btn = document.querySelector('button');
+            btn.innerHTML = '<i class="fas fa-spinner animate-spin text-orange-400"></i> <span class="text-slate-400">登入中...</span>';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                // 登入成功後跳轉到你的主程式頁面 (假設叫 main.html)
+                // window.location.href = 'main.html';
+                alert('模擬 Google 登入成功！準備進入「對談式需求探勘」系統。');
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
